@@ -1,17 +1,21 @@
+// Business Logic
+
+
+
+// User Interface Logic
+
 $(document).ready(function() {
   $("form#input").submit(function(event) {
     event.preventDefault();
 
+    var vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
+
     var sentence = $("input#sentence").val();
     var letters = sentence.split("");
-
-    var vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
 
     for (i = 0; i < letters.length; i += 1) {
       if (vowels.includes(letters[i])) {
         letters[i] = "-";
-      }
-    };
 
     $("#output").text(letters.join(""));
 
